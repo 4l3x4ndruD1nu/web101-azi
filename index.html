@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web 101 midterm review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&family=Atkinson+Hyperlegible+Next:wght@400;600;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <script src="exercises.js" defer></script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="bm bm-margin">
+    <span class="bm-name" aria-hidden="true">margin</span>
+    <span class="bm-v bm-t" aria-hidden="true"></span><span class="bm-v bm-r" aria-hidden="true"></span><span class="bm-v bm-b" aria-hidden="true"></span><span class="bm-v bm-l" aria-hidden="true"></span>
+    <div class="bm bm-border">
+      <span class="bm-name" aria-hidden="true">border</span>
+      <span class="bm-v bm-t" aria-hidden="true"></span><span class="bm-v bm-r" aria-hidden="true"></span><span class="bm-v bm-b" aria-hidden="true"></span><span class="bm-v bm-l" aria-hidden="true"></span>
+      <div class="bm bm-padding">
+        <span class="bm-name" aria-hidden="true">padding</span>
+        <span class="bm-v bm-t" aria-hidden="true"></span><span class="bm-v bm-r" aria-hidden="true"></span><span class="bm-v bm-b" aria-hidden="true"></span><span class="bm-v bm-l" aria-hidden="true"></span>
+        <div class="bm-content">
+          <h1>Web 101<br>Midterm review</h1>
+          <span class="bm-size" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Contents">
+    <ol>
+      <li><a href="#html">HTML</a>
+        <ol>
+          <li><a href="#page"><span>1.1</span>Page skeleton</a></li>
+          <li><a href="#semantic"><span>1.2</span>Semantic layout</a></li>
+          <li><a href="#content"><span>1.3</span>Text, links, images</a></li>
+          <li><a href="#tables"><span>1.4</span>Tables</a></li>
+          <li><a href="#forms"><span>1.5</span>Forms</a></li>
+        </ol>
+      </li>
+      <li><a href="#css">CSS</a>
+        <ol>
+          <li><a href="#selectors"><span>2.1</span>Selectors</a></li>
+          <li><a href="#cascade"><span>2.2</span>Cascade and specificity</a></li>
+          <li><a href="#box"><span>2.3</span>Box model</a></li>
+          <li><a href="#units"><span>2.4</span>Units</a></li>
+          <li><a href="#display"><span>2.5</span>Display</a></li>
+          <li><a href="#position"><span>2.6</span>Position</a></li>
+          <li><a href="#flex"><span>2.7</span>Flexbox</a></li>
+          <li><a href="#grid"><span>2.8</span>Grid</a></li>
+          <li><a href="#states"><span>2.9</span>Hover, shadow, transition</a></li>
+          <li><a href="#responsive"><span>2.10</span>Media queries</a></li>
+        </ol>
+      </li>
+      <li><a href="#js">JavaScript</a>
+        <ol>
+          <li><a href="#types"><span>3.1</span>Variables and types</a></li>
+          <li><a href="#operators"><span>3.2</span>Operators</a></li>
+          <li><a href="#control"><span>3.3</span>Conditions and loops</a></li>
+          <li><a href="#functions"><span>3.4</span>Functions</a></li>
+          <li><a href="#arrays"><span>3.5</span>Arrays</a></li>
+          <li><a href="#objects"><span>3.6</span>Objects and JSON</a></li>
+          <li><a href="#dom"><span>3.7</span>DOM</a></li>
+          <li><a href="#events"><span>3.8</span>Events</a></li>
+          <li><a href="#async"><span>3.9</span>Async and fetch</a></li>
+        </ol>
+      </li>
+      <li><a href="#exercises">Exercises</a>
+        <ol>
+          <li><a href="#ex-html"><span>1–5</span>HTML</a></li>
+          <li><a href="#ex-css"><span>6–15</span>CSS</a></li>
+          <li><a href="#ex-js"><span>16–24</span>JavaScript</a></li>
+        </ol>
+      </li>
+    </ol>
+  </nav>
+
+  <main>
+    <noscript><p>The live examples and exercises need JavaScript.</p></noscript>
+
+    <!-- ============================== HTML ============================== -->
+    <section class="part" id="html">
+      <h2>HTML</h2>
+
+      <section class="topic" id="page">
+        <h3><span class="n">1.1</span>Page skeleton</h3>
+        <figure class="demo" data-preview="none">
+          <script type="text/plain" data-lang="html">
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <title>Artmart</title>
+              <link rel="stylesheet" href="style.css">
+              <script src="script.js" defer><\/script>
+            </head>
+            <body>
+              <h1>Artmart</h1>
+            </body>
+            </html>
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="semantic">
+        <h3><span class="n">1.2</span>Semantic layout</h3>
+        <figure class="demo" data-stage="semantic">
+          <script type="text/plain" data-lang="html">
+            <header>
+              <a href="search.html">Artmart</a>
+              <nav>
+                <a href="search.html">Search</a>
+                <a href="cart.html">Cart (2)</a>
+              </nav>
+            </header>
+            <main>
+              <section>
+                <h1>Cart</h1>
+                <article>
+                  <h2>The Kiss</h2>
+                  <p>Gustav Klimt, 1908</p>
+                </article>
+              </section>
+              <aside>Recently viewed</aside>
+            </main>
+            <footer>© Artmart</footer>
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="content">
+        <h3><span class="n">1.3</span>Text, links, images</h3>
+        <figure class="demo">
+          <script type="text/plain" data-lang="html">
+            <h2>Collection</h2>
+            <p>
+              Prints of <strong>public domain</strong> works,
+              <em>framed</em> or not.
+            </p>
+
+            <figure>
+              <img src="img/painting.svg" alt="Abstract composition">
+              <figcaption>Composition No. 1</figcaption>
+            </figure>
+
+            <ul>
+              <li><a href="cart.html">Relative link</a></li>
+              <li><a href="https://example.com">Absolute link</a></li>
+              <li><a href="faq.html" target="_blank">New tab</a></li>
+              <li><a href="#checkout">Jump to id="checkout"</a></li>
+            </ul>
+
+            <ol>
+              <li>Choose a print</li>
+              <li>Pick a frame</li>
+            </ol>
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="tables">
+        <h3><span class="n">1.4</span>Tables</h3>
+        <figure class="demo">
+          <script type="text/plain" data-lang="html">
+            <table>
+              <caption>Opening hours</caption>
+              <thead>
+                <tr><th>Day</th><th>From</th><th>To</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Mon</td><td colspan="2">Closed</td></tr>
+                <tr><td>Tue–Fri</td><td>10:00</td><td>18:00</td></tr>
+                <tr><td>Sat</td><td>10:00</td><td>14:00</td></tr>
+              </tbody>
+            </table>
+          </script>
+          <script type="text/plain" data-lang="css">
+            table { border-collapse: collapse; }
+            th, td { border: 1px solid #dadce0; padding: 6px 12px; }
+            thead { background: #eff2ed; }
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="forms">
+        <h3><span class="n">1.5</span>Forms</h3>
+        <figure class="demo" data-submit="log" data-console="Request" data-note="Submit the form, also with an empty or invalid field.">
+          <script type="text/plain" data-lang="html">
+            <form action="/checkout" method="post">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+
+              <label for="zip">Postal code</label>
+              <input id="zip" name="zip" pattern="\d{4}" required>
+
+              <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="at">Austria</option>
+                <option value="ro">Romania</option>
+              </select>
+
+              <label for="phone">Phone (optional)</label>
+              <input id="phone" name="phone" type="tel"
+                     placeholder="+43 123456789">
+
+              <label for="frame">Frame width</label>
+              <input id="frame" name="frame" type="range"
+                     min="2" max="5" step="0.1" value="2">
+
+              <fieldset>
+                <legend>Size</legend>
+                <input type="radio" id="s" name="size" value="s">
+                <label for="s">Small</label>
+                <input type="radio" id="l" name="size" value="l" checked>
+                <label for="l">Large</label>
+              </fieldset>
+
+              <label><input type="checkbox" name="gift"> Gift wrap</label>
+              <button type="submit">Pay</button>
+            </form>
+          </script>
+          <script type="text/plain" data-lang="css">
+            form { display: grid; gap: 6px; max-width: 280px; }
+            fieldset { display: flex; align-items: center; gap: 6px; }
+          </script>
+        </figure>
+      </section>
+    </section>
+
+    <!-- ============================== CSS ============================== -->
+    <section class="part" id="css">
+      <h2>CSS</h2>
+
+      <section class="topic" id="selectors">
+        <h3><span class="n">2.1</span>Selectors</h3>
+        <figure class="demo" data-lab="selectors"></figure>
+      </section>
+
+      <section class="topic" id="cascade">
+        <h3><span class="n">2.2</span>Cascade and specificity</h3>
+        <figure class="demo">
+          <script type="text/plain" data-lang="html">
+            <p id="intro" class="lead">Which color wins?</p>
+          </script>
+          <script type="text/plain" data-lang="css">
+            #intro { color: green; }
+            p.lead { color: purple; }
+            .lead  { color: blue; }
+            p      { color: orange; }
+          </script>
+        </figure>
+
+        <table class="ref">
+          <thead>
+            <tr><th>Rule</th><th>Specificity</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>p</code></td><td>0, 0, 1</td></tr>
+            <tr><td><code>.lead</code> <code>[type="email"]</code> <code>:hover</code></td><td>0, 1, 0</td></tr>
+            <tr><td><code>p.lead</code></td><td>0, 1, 1</td></tr>
+            <tr><td><code>nav a:hover</code></td><td>0, 1, 2</td></tr>
+            <tr><td><code>#intro</code></td><td>1, 0, 0</td></tr>
+            <tr><td><code>style="color: red"</code></td><td>beats every selector</td></tr>
+            <tr><td><code>color: red !important</code></td><td>beats everything above</td></tr>
+            <tr><td>Same specificity</td><td>the later rule wins</td></tr>
+          </tbody>
+        </table>
+
+        <figure class="demo">
+          <script type="text/plain" data-lang="html">
+            <div class="card">
+              <p>Inherits color and font</p>
+              <a href="#">Links keep their own color</a>
+            </div>
+          </script>
+          <script type="text/plain" data-lang="css">
+            .card {
+              color: #188038;
+              font-family: Georgia, serif;
+              border: 2px solid;
+              padding: 12px;
+            }
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="box">
+        <h3><span class="n">2.3</span>Box model</h3>
+        <figure class="demo" data-playground="box"></figure>
+      </section>
+
+      <section class="topic" id="units">
+        <h3><span class="n">2.4</span>Units</h3>
+        <figure class="demo">
+          <script type="text/plain" data-lang="html">
+            <div class="parent">
+              <p class="em">1.5em</p>
+              <p class="rem">1.5rem</p>
+              <div class="half">width: 50%</div>
+            </div>
+          </script>
+          <script type="text/plain" data-lang="css">
+            .parent { font-size: 20px; width: 300px; }
+            .em   { font-size: 1.5em; }   /* 1.5 × 20px = 30px */
+            .rem  { font-size: 1.5rem; }  /* 1.5 × 16px = 24px */
+            .half { width: 50%; background: #c3d08b; }  /* 150px */
+          </script>
+        </figure>
+
+        <table class="ref">
+          <tbody>
+            <tr><td><code>px</code></td><td>fixed</td></tr>
+            <tr><td><code>%</code></td><td>of the parent</td></tr>
+            <tr><td><code>em</code></td><td>of the parent font-size</td></tr>
+            <tr><td><code>rem</code></td><td>of the root (<code>html</code>) font-size, 16px by default</td></tr>
+            <tr><td><code>vw</code> <code>vh</code></td><td>1% of the window width / height</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="topic" id="display">
+        <h3><span class="n">2.5</span>Display</h3>
+        <figure class="demo" data-playground="display"></figure>
+      </section>
+
+      <section class="topic" id="position">
+        <h3><span class="n">2.6</span>Position</h3>
+        <figure class="demo" data-playground="position"></figure>
+      </section>
+
+      <section class="topic" id="flex">
+        <h3><span class="n">2.7</span>Flexbox</h3>
+        <figure class="demo" data-playground="flex"></figure>
+      </section>
+
+      <section class="topic" id="grid">
+        <h3><span class="n">2.8</span>Grid</h3>
+        <figure class="demo" data-playground="grid"></figure>
+      </section>
+
+      <section class="topic" id="states">
+        <h3><span class="n">2.9</span>Hover, shadow, transition</h3>
+        <figure class="demo" data-note="Hover and click.">
+          <script type="text/plain" data-lang="html">
+            <button class="btn">Checkout</button>
+
+            <figure class="art">
+              <img src="img/painting.svg" alt="Abstract composition">
+            </figure>
+          </script>
+          <script type="text/plain" data-lang="css">
+            .btn {
+              background: #26231f;
+              color: #fff;
+              border: 0;
+              height: 2.5em;
+              padding: 0 2em;
+              transition: transform 0.1s;
+            }
+            .btn:hover  { opacity: 0.9; }
+            .btn:active { transform: scale(0.95); }
+
+            .art img {
+              width: 180px;
+              box-shadow: 0 7px 15px rgba(0, 0, 0, 0.5);
+              transition: transform 0.5s;
+            }
+            .art img:hover { transform: scale(1.1); }
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="responsive">
+        <h3><span class="n">2.10</span>Media queries</h3>
+        <figure class="demo" data-playground="media"></figure>
+      </section>
+    </section>
+
+    <!-- ============================== JS ============================== -->
+    <section class="part" id="js">
+      <h2>JavaScript</h2>
+
+      <section class="topic" id="types">
+        <h3><span class="n">3.1</span>Variables and types</h3>
+        <figure class="demo">
+          <script type="text/plain" data-lang="js">
+            const title = "Starry Night";
+            let price = 49;
+            price = price + 10;
+
+            console.log(`${title}: €${price}`);
+            console.log(typeof title, typeof price, typeof true);
+            console.log(typeof undefined, typeof null);
+            console.log(typeof [], typeof {}, typeof function () {});
+
+            const year = 1889;
+            year = 1890;
+          </script>
+        </figure>
+        <figure class="demo">
+          <script type="text/plain" data-lang="js">
+            if (true) {
+              var a = 1;
+              let b = 2;
+            }
+            console.log(a);
+            console.log(typeof b);
+            console.log(b);
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="operators">
+        <h3><span class="n">3.2</span>Operators</h3>
+        <figure class="demo">
+          <script type="text/plain" data-lang="js">
+            console.log("5" + 3, "5" - 3, "5" * "2");
+            console.log(5 == "5", 5 === "5", 5 !== "5");
+            console.log(null == undefined, null === undefined);
+            console.log(Number("42"), Number("42px"), parseInt("42px"));
+            console.log(0.1 + 0.2, (0.1 + 0.2).toFixed(2));
+            console.log(10 % 3, 2 ** 10);
+
+            // falsy: false, 0, "", null, undefined, NaN
+            console.log(Boolean(""), Boolean("0"), Boolean([]));
+            console.log(null ?? "default", 0 || "fallback", 0 ?? "kept");
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="control">
+        <h3><span class="n">3.3</span>Conditions and loops</h3>
+        <figure class="demo">
+          <script type="text/plain" data-lang="js">
+            const stock = 3;
+
+            if (stock === 0) {
+              console.log("Sold out");
+            } else if (stock < 5) {
+              console.log(`Only ${stock} left`);
+            } else {
+              console.log("In stock");
+            }
+
+            console.log(stock > 0 ? "available" : "sold out");
+
+            for (let i = 0; i < 3; i++) {
+              console.log("i =", i);
+            }
+
+            for (const color of ["red", "blue"]) console.log(color);
+
+            const art = { title: "The Kiss", year: 1908 };
+            for (const key in art) console.log(key, art[key]);
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="functions">
+        <h3><span class="n">3.4</span>Functions</h3>
+        <figure class="demo">
+          <script type="text/plain" data-lang="js">
+            function add(a, b) {
+              return a + b;
+            }
+            const square = function (x) {
+              return x * x;
+            };
+            const double = (x) => x * 2;
+            const greet = (name = "guest") => `Hello, ${name}!`;
+
+            console.log(add(2, 3), square(4), double(5));
+            console.log(greet(), greet("Ana"));
+            console.log(add(2));
+
+            function apply(fn, value) {
+              return fn(value);
+            }
+            console.log(apply(double, 21));
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="arrays">
+        <h3><span class="n">3.5</span>Arrays</h3>
+        <figure class="demo">
+          <script type="text/plain" data-lang="js">
+            const prices = [49, 35, 120, 18];
+            prices.push(60);
+
+            console.log(prices.length, prices[0], prices.at(-1));
+            console.log(prices.map((p) => p * 2));
+            console.log(prices.filter((p) => p < 50));
+            console.log(prices.find((p) => p > 100));
+            console.log(prices.reduce((sum, p) => sum + p, 0));
+            console.log(prices.includes(35), prices.indexOf(120));
+            console.log([...prices].sort((a, b) => a - b));
+            console.log([10, 9, 1].sort());
+            console.log(prices.slice(1, 3), prices.join(" | "));
+            prices.forEach((p, i) => console.log(i, p));
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="objects">
+        <h3><span class="n">3.6</span>Objects and JSON</h3>
+        <figure class="demo">
+          <script type="text/plain" data-lang="js">
+            const art = {
+              title: "The Kiss",
+              artist: "Gustav Klimt",
+              year: 1908,
+            };
+
+            console.log(art.title, art["year"], art.frame);
+            art.price = 35;
+
+            const { artist, price } = art;
+            console.log(artist, price);
+
+            const copy = { ...art, year: 1909 };
+            console.log(copy.year, art.year);
+            console.log(Object.keys(art));
+
+            const json = JSON.stringify(art);
+            console.log(json);
+            console.log(JSON.parse(json).artist);
+
+            const cart = [art, { title: "Water Lilies", price: 42 }];
+            console.log(cart.map((item) => item.price));
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            const saved = JSON.parse(localStorage.getItem("cart"));
+            console.log(saved.length, saved[1].title);
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="dom">
+        <h3><span class="n">3.7</span>DOM</h3>
+        <figure class="demo">
+          <script type="text/plain" data-lang="html">
+            <h2 id="title">Prints</h2>
+            <ul class="list">
+              <li>Starry Night</li>
+              <li>The Kiss</li>
+            </ul>
+            <p class="note"></p>
+          </script>
+          <script type="text/plain" data-lang="css">
+            .highlight { color: #1a73e8; }
+          </script>
+          <script type="text/plain" data-lang="js">
+            const title = document.querySelector("#title");
+            title.textContent = "Prints (3)";
+            title.classList.add("highlight");
+
+            const li = document.createElement("li");
+            li.textContent = "Water Lilies";
+            document.querySelector(".list").append(li);
+
+            const items = document.querySelectorAll(".list li");
+            console.log(items.length, items[0].textContent);
+            items[0].style.fontWeight = "bold";
+
+            const note = document.querySelector(".note");
+            note.innerHTML = "Prices <em>include</em> VAT";
+            note.setAttribute("title", "20% VAT");
+            console.log(title);
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="events">
+        <h3><span class="n">3.8</span>Events</h3>
+        <figure class="demo" data-note="Click the button, type in the field.">
+          <script type="text/plain" data-lang="html">
+            <button id="toggle">Show details</button>
+            <p id="details" hidden>Oil on canvas, 73.7 × 92.1 cm</p>
+
+            <input id="search" placeholder="Search the collection">
+            <p id="echo"></p>
+          </script>
+          <script type="text/plain" data-lang="js">
+            const button = document.querySelector("#toggle");
+            const details = document.querySelector("#details");
+
+            button.addEventListener("click", () => {
+              details.hidden = !details.hidden;
+              const label = details.hidden ? "Show" : "Hide";
+              button.textContent = `${label} details`;
+            });
+
+            const search = document.querySelector("#search");
+            const echo = document.querySelector("#echo");
+
+            search.addEventListener("input", (event) => {
+              echo.textContent = event.target.value;
+            });
+          </script>
+        </figure>
+
+        <figure class="demo" data-note="Subscribe with and without an email.">
+          <script type="text/plain" data-lang="html">
+            <form id="newsletter">
+              <input name="email" type="email" required>
+              <button>Subscribe</button>
+            </form>
+            <p id="msg"></p>
+          </script>
+          <script type="text/plain" data-lang="js">
+            const form = document.querySelector("#newsletter");
+            const msg = document.querySelector("#msg");
+
+            form.addEventListener("submit", (event) => {
+              event.preventDefault();
+              const email = form.elements.email.value;
+              msg.textContent = `Subscribed: ${email}`;
+              form.reset();
+            });
+          </script>
+        </figure>
+
+        <figure class="demo" data-note="Click an item.">
+          <script type="text/plain" data-lang="html">
+            <ul id="todo">
+              <li>Frame the print</li>
+              <li>Ship order #12</li>
+              <li>Send the invoice</li>
+            </ul>
+          </script>
+          <script type="text/plain" data-lang="css">
+            li { cursor: pointer; }
+            .done { text-decoration: line-through; color: #80868b; }
+          </script>
+          <script type="text/plain" data-lang="js">
+            const list = document.querySelector("#todo");
+
+            list.addEventListener("click", (event) => {
+              if (event.target.matches("li")) {
+                event.target.classList.toggle("done");
+                console.log("clicked:", event.target.textContent);
+              }
+            });
+          </script>
+        </figure>
+      </section>
+
+      <section class="topic" id="async">
+        <h3><span class="n">3.9</span>Async and fetch</h3>
+        <figure class="demo">
+          <script type="text/plain" data-lang="js">
+            console.log("1: start");
+            setTimeout(() => console.log("4: timeout"), 0);
+            Promise.resolve().then(() => console.log("3: promise"));
+            console.log("2: end");
+          </script>
+        </figure>
+
+        <figure class="demo" data-note="fetch is simulated on this page: /api/artworks/1 to /api/artworks/3 exist.">
+          <script type="text/plain" data-lang="js">
+            fetch("/api/artworks/1")
+              .then((res) => res.json())
+              .then((art) => console.log("then:", art.title));
+
+            async function load(id) {
+              try {
+                const res = await fetch(`/api/artworks/${id}`);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const art = await res.json();
+                console.log(art.title, "by", art.artist);
+              } catch (err) {
+                console.log("Failed:", err.message);
+              }
+            }
+
+            load(2);
+            load(99);
+          </script>
+        </figure>
+      </section>
+    </section>
+
+    <!-- ============================== Exercises ============================== -->
+    <section class="part" id="exercises">
+      <h2>Exercises</h2>
+      <p class="lede">Press Check or <kbd>Ctrl</kbd> + <kbd>Enter</kbd>. Answers are saved in this browser.</p>
+
+      <div class="ex-bar">
+        <ol class="ex-map" aria-label="Jump to exercise"></ol>
+        <span class="ex-progress"><span data-solved>0</span> of <span data-ex-count>24</span> solved</span>
+        <span class="timer">
+          <span class="timer-time" role="timer" aria-live="off">40:00</span>
+          <button class="btn btn-small" type="button" data-timer>Start timer</button>
+        </span>
+        <button class="btn btn-small" type="button" data-reset>Reset answers</button>
+      </div>
+
+      <section class="ex-group" id="ex-html">
+        <h3>HTML</h3>
+        <p class="meta"></p>
+        <div data-group="html"></div>
+      </section>
+
+      <section class="ex-group" id="ex-css">
+        <h3>CSS</h3>
+        <p class="meta"></p>
+        <div data-group="css"></div>
+      </section>
+
+      <section class="ex-group" id="ex-js">
+        <h3>JavaScript</h3>
+        <p class="meta"></p>
+        <div data-group="js"></div>
+      </section>
+    </section>
+  </main>
+</div>
+
+<p id="editor-help" class="sr-only">Tab inserts two spaces. Press Escape, then Tab, to leave the editor. Ctrl and Enter checks the answer.</p>
+</body>
+</html>
